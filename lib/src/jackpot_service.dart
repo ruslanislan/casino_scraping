@@ -237,6 +237,10 @@ class JackpotService {
     final List<Jackpot> jackpots = [];
     for (var data in biggestJackpotsData) {
       final name = data.find('td', attrs: {'class': 'name'})?.find('a')?.text;
+      final url = data
+          .find('td', attrs: {'class': 'name'})
+          ?.find('a')
+          ?.attributes['href'];
       final value = data
           .find('td', attrs: {'class': 'number jackpot'})
           ?.find('span')
@@ -246,7 +250,7 @@ class JackpotService {
         name: name ?? '',
         value: value ?? '',
         software: '',
-        url: '',
+        url: url ?? '',
         breakEven: '',
         rtp: '',
         winChance: '',
