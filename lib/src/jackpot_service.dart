@@ -304,8 +304,6 @@ class JackpotService {
         final valueData = contentData.find('td', attrs: {'class': 'number'});
         final value = (valueData?.find('span') ?? valueData)?.text ?? '';
 
-        print('key: $contentTitle - description: $description - value: $value');
-
         final content = Content(
           title: contentTitle,
           description: description,
