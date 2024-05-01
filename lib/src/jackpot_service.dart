@@ -31,7 +31,10 @@ class JackpotService {
     final List<Jackpot> jackpots = [];
     for (var data in jackpotsData) {
       final name = data.find('td', attrs: {'class': 'name'})?.text;
-      final value = data.find('td', attrs: {'class': 'number jackpot'})?.text;
+      final value = data
+          .find('td', attrs: {'class': 'number jackpot'})
+          ?.find('span')
+          ?.text;
       final software = data.find('td', attrs: {'class': 'software'})?.text;
       final url = data
           .find('td', attrs: {'class': 'name'})
