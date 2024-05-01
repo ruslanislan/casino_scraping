@@ -321,7 +321,8 @@ class JackpotService {
 
     final descriptionData =
         bs.find('div', attrs: {'class': 'detail'})?.findAll('p');
-    final descriptions = descriptionData?.map((e) => e.text).toList() ?? [];
+    final descriptions =
+        descriptionData?.map((e) => e.text.trim()).toList() ?? [];
 
     final jackpotDetail = JackpotDetail(
       fact: fact,
