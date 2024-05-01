@@ -53,7 +53,8 @@ class JackpotService {
     return jackpots;
   }
 
-  Future<(List<Jackpot>, List<Jackpot>)> getTopJackpots() async {
+  Future<(List<Jackpot> topWorldWideJackpots, List<Jackpot> topUsaJackpots)>
+      getTopJackpots() async {
     final result = await dio.get(_topJackpotsUrl);
     final bs = BeautifulSoup(result.data);
 
