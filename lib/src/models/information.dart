@@ -4,11 +4,13 @@ class Information {
   final String title;
   final List<Content> contents;
 
+  final bool hasDescription;
+
 //<editor-fold desc="Data Methods">
-  const Information({
+  Information({
     required this.title,
     required this.contents,
-  });
+  }) : hasDescription = contents.any((element) => element.description != null);
 
   @override
   bool operator ==(Object other) =>
